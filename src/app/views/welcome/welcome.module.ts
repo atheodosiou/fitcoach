@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { WelcomeComponent } from './welcome.component';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule({
     declarations: [
@@ -8,7 +9,8 @@ import { WelcomeComponent } from './welcome.component';
     ],
     imports: [],
     exports: [
-        WelcomeComponent
+        WelcomeComponent,
+        AngularFullpageModule
     ]
 })
 export class WelcomeModule{}
