@@ -1,4 +1,4 @@
-@import '../../shared/styles/colors';
+@import '../../shared/assets/styles/colors';
 
 @mixin full-height {
     height: 100vh;
@@ -10,12 +10,25 @@
     
     .step-1{
         @include full-height();
-        background:url('../../shared/assets/welcome-bg-1.jpg') no-repeat center center;
+        background:url('../../shared/assets/images/large/welcome-bg-1.jpg') no-repeat center center;
     }
 
     .step-2{
         @include full-height();
         background-color: $Color-Dark-Red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .search-box {
+            width: 350px;
+            font-size: 1.2em;
+        }
+        
+        .search-button{
+            font-size: 1.2em;
+            margin-left: .5em
+        }
     }
 
     .step-3{
