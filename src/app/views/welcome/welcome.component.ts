@@ -11,8 +11,4 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onSearch(data:any){
-    console.log(data);
-  }
 }

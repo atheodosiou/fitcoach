@@ -13,6 +13,5 @@ export class Sdk {
     } else {
       return this.http.get(endpoint);
     }
-
   }
 }
