@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'main-nav-bar',
   templateUrl: './main-nav-bar.component.html',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavBarComponent implements OnInit {
 
-  constructor() { }
+  @Input() menu:MenuItem[]=[]
 
+  
+  constructor() { }
+  
   ngOnInit() {
   }
 

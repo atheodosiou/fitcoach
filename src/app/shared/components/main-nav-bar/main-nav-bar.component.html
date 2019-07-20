@@ -1,3 +1,6 @@
-<p>
-  main-nav-bar works!
-</p>
+<div class="menu-wrapper">
+  <div class="brand">Fit<span style="color: blueviolet;">C</span>oach</div>
+  <ul>
+    <li *ngFor="let item of menu"><a>{{item.label}}</a></li>
+  </ul>
+</div>
