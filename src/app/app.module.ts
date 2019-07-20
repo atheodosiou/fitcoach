@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeModule } from './views/welcome/welcome.module';
+import { MainNavBarModule } from './shared/components/main-nav-bar/main-nav-bar.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { WelcomeModule } from './views/welcome/welcome.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MainNavBarModule,
     WelcomeModule
   ],
   providers: [],
