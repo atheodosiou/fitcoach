@@ -1,0 +1,65 @@
+.wrapper{
+    display: flex;
+    background: url('../../shared/assets/images/large/welcome-bg-2.jpg') no-repeat center center;
+    background-size: cover;
+    height:100vh;
+
+    .fade{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.75);
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        .hello{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 60%;
+            height: 100%;
+            // background-color: rgba($color: blueviolet, $alpha: 0.50);
+
+            .title{
+                // font-weight: bold;
+                color: white;
+                font-size: 3em;
+                text-align: center;
+            }
+
+            .sub-title{
+                font-weight: bold;
+                color: lightgray;
+                font-size: 1.2em;
+                margin-top: 1em;
+            }
+        }
+
+        .signup-container{
+            display: flex;
+            width: 40%;
+            height: 100%;
+            // background-color: rgba($color: white, $alpha: 0.25);
+            justify-content: center;
+            align-items: center;
+
+            .form{
+                display: flex;
+                flex-direction: column;
+                background-color: rgba($color: blueviolet, $alpha: 0.15);
+                width: 500px;
+                height: 600px;
+                border: 1px solid rgba($color: blueviolet, $alpha: 0.5);;
+                border-radius: 3px;
+                padding: 1em;
+
+                .form-field{
+                    font-size: 1.2em;
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}
