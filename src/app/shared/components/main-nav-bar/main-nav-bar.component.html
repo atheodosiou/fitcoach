@@ -1,6 +1,6 @@
 <div class="menu-wrapper">
   <div class="brand">Fit<span style="color: blueviolet;">C</span>oach</div>
   <ul>
-    <li *ngFor="let item of menu"><a>{{item.label}}</a></li>
+    <li *ngFor="let item of menu"><a routerLink="{{item.routerLink}}">{{item.label}}</a></li>
   </ul>
 </div>
