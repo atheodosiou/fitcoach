@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     this.menu = [
+      {label:'Home',routerLink:'/'},
       {label:'Find a personal trainer',routerLink:'/find-personal-trainers'},
       {label:'Become a trainer',routerLink:'/trainer-signup'}
     ];
