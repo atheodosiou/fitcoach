@@ -4,6 +4,10 @@ import { WelcomeComponent } from './views/welcome/welcome.component';
 import { TrainerSignupComponent } from './views/trainer-signup/trainer-signup.component';
 import { FindTrainersComponent } from './views/find-trainers/find-trainers.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { WelcomeModule } from './views/welcome/welcome.module';
+import { TrainerSignupModule } from './views/trainer-signup/trainer-signup.module';
+import { FindTrainersModule } from './views/find-trainers/find-trainers.module';
+import { PageNotFoundModule } from './views/page-not-found/page-not-found.module';
 
 
 // const routes: Routes = [
@@ -42,9 +46,13 @@ const routes: Routes = [
 @NgModule({
   imports: [
     //Lazy routing
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    WelcomeModule,
+    TrainerSignupModule,
+    FindTrainersModule,
+    PageNotFoundModule
   ],
   exports: [RouterModule],
-  declarations:[TrainerSignupComponent,FindTrainersComponent,PageNotFoundComponent]
+  // declarations:[TrainerSignupComponent,FindTrainersComponent,PageNotFoundComponent]
 })
 export class AppRoutingModule { }
