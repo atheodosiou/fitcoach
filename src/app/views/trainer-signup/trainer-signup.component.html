@@ -11,12 +11,15 @@
     <div class="signup-container">
       <div class="form">
         <div class="label">registration</div>
+        <p-steps [model]="steps" [readonly]="false" styleClass="steps-custom"></p-steps>
         <input class="form-field" type="text" pInputText placeholder="Enter your first name">
         <input class="form-field" type="text" pInputText placeholder="Enter your last name">
         <input class="form-field" type="text" pInputText placeholder="Enter your e-mail">
         <input class="form-field" type="password" pInputText placeholder="Enter your password">
         <input class="form-field" type="text"  max="99999" pInputText placeholder="Enter your mobile" >
-        <p-dropdown [options]="gender" appendTo="body" placeholder="Select your gender"></p-dropdown>
+        <p-dropdown [options]="gender" [style]="{'width':'100%','margin-top':'1em'}" appendTo="body" placeholder="Select your gender"></p-dropdown>
+      
+        <button type="button" pButton label="next"></button>
       </div>
     </div>
   </div>
