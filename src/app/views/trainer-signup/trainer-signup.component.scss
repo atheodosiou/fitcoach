@@ -1,3 +1,13 @@
+@mixin displayColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin displayRow {
+    display: flex;
+    flex-direction: row;
+}
+
 .wrapper{
     display: flex;
     background: url('../../shared/assets/images/large/welcome-bg-2.jpg') no-repeat center center;
@@ -5,25 +15,21 @@
     height:100vh;
 
     .fade{
-        display: flex;
+        @include displayRow();
         width: 100%;
         height: 100%;
         background-color: rgba($color: #000000, $alpha: 0.75);
         justify-content: center;
         align-items: center;
-        flex-direction: row;
 
         .hello{
-            display: flex;
+            @include displayColumn();
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             width: 60%;
             height: 100%;
-            // background-color: rgba($color: blueviolet, $alpha: 0.50);
 
             .title{
-                // font-weight: bold;
                 color: white;
                 font-size: 3em;
                 text-align: center;
@@ -41,13 +47,11 @@
             display: flex;
             width: 40%;
             height: 100%;
-            // background-color: rgba($color: white, $alpha: 0.25);
             justify-content: center;
             align-items: center;
 
             .form{
-                display: flex;
-                flex-direction: column;
+                @include displayColumn();
                 background-color: rgba($color: blueviolet, $alpha: 0.15);
                 width: 500px;
                 height: 600px;
@@ -56,6 +60,7 @@
                 padding: 1em;
                 justify-content: space-between;
 
+                // Stepper
                 .stepper{
 
                     .label{
@@ -66,9 +71,10 @@
                         font-size: 1.2em;
                     }
                 }
+
+                //Steps
                 .step-1{
-                    display: flex;
-                    flex-direction: column;
+                   @include displayColumn();
                     
                     .form-field{
                         font-size: 1.2em;
@@ -89,10 +95,22 @@
                 }
 
                 .step-2{
-                    display: flex;
-                    flex-direction: column;
+                    @include displayColumn();
                 }
 
+                .step-3{
+                    @include displayColumn();
+                }
+
+                .step-4{
+                    @include displayColumn();
+                }
+
+                .step-5{
+                    @include displayColumn();
+                }
+
+                // Action Button
                 .next-btn{
                     background: blueviolet; 
                     border-color: blueviolet;
@@ -103,9 +121,6 @@
                         border-color: rgb(109, 34, 179);
                     }
                 }
-
-
-                
             }
         }
     }

@@ -38,7 +38,20 @@
           <div *ngIf="formControl.stepIndex == 1" class="step-2">
             {{formControl.stepLabel}}
           </div>
+
+          <div *ngIf="formControl.stepIndex == 2" class="step-3">
+            {{formControl.stepLabel}}
+          </div>
+
+          <div *ngIf="formControl.stepIndex == 3" class="step-4">
+            {{formControl.stepLabel}}
+          </div>
+
+          <div *ngIf="formControl.stepIndex == 4" class="step-5">
+            {{formControl.stepLabel}}
+          </div>
         </div>
+        <!-- Action Button -->
         <button type="button" pButton label="{{formControl.stepLabel}}" class="next-btn"
           (click)="onNextStep()"></button>
       </div>
