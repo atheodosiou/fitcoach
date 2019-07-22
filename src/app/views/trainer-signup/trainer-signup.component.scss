@@ -54,17 +54,47 @@
                 border: 1px solid rgba($color: blueviolet, $alpha: 0.5);;
                 border-radius: 3px;
                 padding: 1em;
+                justify-content: space-between;
 
-                .label{
-                    text-align: center;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    color: white;
-                    font-size: 1.2em;
+                .step-1{
+                    display: flex;
+                    flex-direction: column;
+                    .label{
+                        text-align: center;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        color: white;
+                        font-size: 1.2em;
+                    }
+                    .form-field{
+                        font-size: 1.2em;
+                        margin-top: 1em;
+                    }
+
+                    .gender{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        justify-items: center;
+                        margin-top: 1em;
+                        color:white;
+                    }
                 }
-                .form-field{
-                    font-size: 1.2em;
-                    margin-top: 1em;
+
+                .step-2{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .next-btn{
+                    background: blueviolet; 
+                    border-color: blueviolet;
+                    margin-bottom: 1em;
+
+                    &:hover{
+                        background: rgb(109, 34, 179); 
+                        border-color: rgb(109, 34, 179);
+                    }
                 }
             }
         }
