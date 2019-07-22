@@ -8,6 +8,17 @@
     flex-direction: row;
 }
 
+@mixin formField {
+    .form-field{
+        font-size: 1.2em;
+        margin-top: 1em;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}
+
+
 .wrapper{
     display: flex;
     background: url('../../shared/assets/images/large/welcome-bg-2.jpg') no-repeat center center;
@@ -74,15 +85,8 @@
 
                 //Steps
                 .step-1{
-                   @include displayColumn();
-                    
-                    .form-field{
-                        font-size: 1.2em;
-                        margin-top: 1em;
-                        &:first-child{
-                            margin-top: 0;
-                        }
-                    }
+                    @include displayColumn();
+                    @include formField();
 
                     .gender{
                         display: flex;
@@ -96,6 +100,29 @@
 
                 .step-2{
                     @include displayColumn();
+
+                    .form-control{
+                        @include displayColumn();
+                        .row{
+                            @include displayRow();
+                            justify-content: space-between;
+                            align-items: center;
+                            .label{
+                                color: white
+                            }
+                            .total{
+                                color: white;
+                            }
+                        }
+                        .text-area{
+                            font-size: 1.2em;
+                            height: 95px;
+                            width: 100%;
+                            resize: none;
+                            margin-top:.25em;
+                            margin-bottom: .25em;
+                        }
+                    }
                 }
 
                 .step-3{
@@ -104,6 +131,7 @@
 
                 .step-4{
                     @include displayColumn();
+                    @include formField();
                 }
 
                 .step-5{

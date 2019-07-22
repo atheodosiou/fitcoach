@@ -17,13 +17,13 @@
               styleClass="steps-custom">
             </p-steps>
           </div>
-
+          <!-- Step 1 -->
           <div *ngIf="formControl.stepIndex == 0" class="step-1">
             <input class="form-field" type="text" pInputText placeholder="Enter your first name">
             <input class="form-field" type="text" pInputText placeholder="Enter your last name">
             <input class="form-field" type="text" pInputText placeholder="Enter your e-mail">
             <input class="form-field" type="password" pInputText placeholder="Enter your password">
-            <input class="form-field" type="text" max="99999" pInputText placeholder="Enter your mobile">
+            <input class="form-field" type="text" pInputText placeholder="Enter your mobile">
 
             <div class="gender">
               <p-radioButton name="group1" value="Option 1" label="Male" [(ngModel)]="val1" inputId="opt1">
@@ -34,23 +34,46 @@
               </p-radioButton>
             </div>
           </div>
-
+          <!-- Step 2 -->
           <div *ngIf="formControl.stepIndex == 1" class="step-2">
-            {{formControl.stepLabel}}
+              <div class="form-control">
+                  <div class="row">
+                      <div class="label">About you</div>
+                      <div class="total">500</div>
+                  </div>
+                  <textarea class="text-area" pInputTextarea  pInputTextarea></textarea>
+              </div>
+              <div class="form-control">
+                  <div class="row">
+                      <div class="label">Qualifications</div>
+                      <div class="total">500</div>
+                  </div>
+                  <textarea class="text-area" pInputTextarea  pInputTextarea></textarea>
+              </div>
+              <div class="form-control">
+                  <div class="row">
+                      <div class="label">Achievements</div>
+                      <div class="total">500</div>
+                  </div>
+                  <textarea class="text-area" pInputTextarea  pInputTextarea></textarea>
+              </div>
           </div>
-
+          <!-- Step 3 -->
           <div *ngIf="formControl.stepIndex == 2" class="step-3">
             {{formControl.stepLabel}}
           </div>
-
+          <!-- Step 4 -->
           <div *ngIf="formControl.stepIndex == 3" class="step-4">
-            {{formControl.stepLabel}}
+              <input class="form-field" type="text" pInputText placeholder="Enter your Facebook page">
+              <input class="form-field" type="text" pInputText placeholder="Enter your Instagram page">
+              <input class="form-field" type="text" pInputText placeholder="Enter your Twitter page">
           </div>
-
+          <!-- Step 5 -->
           <div *ngIf="formControl.stepIndex == 4" class="step-5">
             {{formControl.stepLabel}}
           </div>
         </div>
+
         <!-- Action Button -->
         <button type="button" pButton label="{{formControl.stepLabel}}" class="next-btn"
           (click)="onNextStep()"></button>

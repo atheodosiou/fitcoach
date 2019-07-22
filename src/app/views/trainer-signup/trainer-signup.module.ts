@@ -7,6 +7,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { StepsModule} from 'primeng/steps';
 import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 @NgModule({
     declarations:[TrainerSignupComponent],
     exports:[TrainerSignupComponent],
@@ -17,7 +18,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
         DropdownModule,
         StepsModule,
         ButtonModule,
-        RadioButtonModule
+        RadioButtonModule,
+        InputTextareaModule
     ]
 })
 export class TrainerSignupModule{}
