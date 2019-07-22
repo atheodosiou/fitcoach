@@ -56,9 +56,8 @@
                 padding: 1em;
                 justify-content: space-between;
 
-                .step-1{
-                    display: flex;
-                    flex-direction: column;
+                .stepper{
+
                     .label{
                         text-align: center;
                         font-weight: bold;
@@ -66,9 +65,17 @@
                         color: white;
                         font-size: 1.2em;
                     }
+                }
+                .step-1{
+                    display: flex;
+                    flex-direction: column;
+                    
                     .form-field{
                         font-size: 1.2em;
                         margin-top: 1em;
+                        &:first-child{
+                            margin-top: 0;
+                        }
                     }
 
                     .gender{
@@ -96,7 +103,19 @@
                         border-color: rgb(109, 34, 179);
                     }
                 }
+
+
+                
             }
         }
     }
+}
+
+//Steper
+p-steps ::ng-deep div > ul > li.ui-steps-item.ui-state-highlight.ui-steps-current > a > span.ui-steps-number{
+    background-color: blueviolet;
+}
+
+p-steps ::ng-deep > div > ul > li.ui-steps-item.ui-state-highlight.ui-steps-current > a > span.ui-steps-title{
+    color: white;
 }

@@ -10,30 +10,37 @@
     </div>
     <div class="signup-container">
       <div class="form">
-        <div *ngIf="formControl.stepIndex == 1" class="step-1">
-          <div class="label">registration</div>
-          <p-steps [model]="steps" [readonly]="false" styleClass="steps-custom"></p-steps>
-          <input class="form-field" type="text" pInputText placeholder="Enter your first name">
-          <input class="form-field" type="text" pInputText placeholder="Enter your last name">
-          <input class="form-field" type="text" pInputText placeholder="Enter your e-mail">
-          <input class="form-field" type="password" pInputText placeholder="Enter your password">
-          <input class="form-field" type="text" max="99999" pInputText placeholder="Enter your mobile">
+        <div>
+          <div class="stepper">
+            <div class="label">registration</div>
+            <p-steps [model]="steps" [(activeIndex)]="formControl.stepIndex" [readonly]="false"
+              styleClass="steps-custom">
+            </p-steps>
+          </div>
 
-          <div class="gender">
-            <p-radioButton name="group1" value="Option 1" label="Male" [(ngModel)]="val1" inputId="opt1">
-            </p-radioButton>
-            <p-radioButton name="group1" value="Option 2" label="Female" [(ngModel)]="val1" inputId="opt2">
-            </p-radioButton>
-            <p-radioButton name="group1" value="Option 3" label="Neutral" [(ngModel)]="val1" inputId="opt3">
-            </p-radioButton>
+          <div *ngIf="formControl.stepIndex == 0" class="step-1">
+            <input class="form-field" type="text" pInputText placeholder="Enter your first name">
+            <input class="form-field" type="text" pInputText placeholder="Enter your last name">
+            <input class="form-field" type="text" pInputText placeholder="Enter your e-mail">
+            <input class="form-field" type="password" pInputText placeholder="Enter your password">
+            <input class="form-field" type="text" max="99999" pInputText placeholder="Enter your mobile">
+
+            <div class="gender">
+              <p-radioButton name="group1" value="Option 1" label="Male" [(ngModel)]="val1" inputId="opt1">
+              </p-radioButton>
+              <p-radioButton name="group1" value="Option 2" label="Female" [(ngModel)]="val1" inputId="opt2">
+              </p-radioButton>
+              <p-radioButton name="group1" value="Option 3" label="Neutral" [(ngModel)]="val1" inputId="opt3">
+              </p-radioButton>
+            </div>
+          </div>
+
+          <div *ngIf="formControl.stepIndex == 1" class="step-2">
+            {{formControl.stepLabel}}
           </div>
         </div>
-
-        <div *ngIf="formControl.stepIndex == 2" class="step-2">
-          {{formControl.stepLabel}}
-        </div>
-
-        <button type="button" pButton label="{{formControl.stepLabel}}" class="next-btn" (click)="onNextStep()"></button>
+        <button type="button" pButton label="{{formControl.stepLabel}}" class="next-btn"
+          (click)="onNextStep()"></button>
       </div>
     </div>
   </div>

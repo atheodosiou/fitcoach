@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { SelectItem, MenuItem } from 'primeng/api';
 
 export class FormControl{
@@ -23,22 +23,22 @@ export class TrainerSignupComponent implements OnInit {
   ngOnInit() {
     this.formControl = new FormControl();
     this.formControl.totalSteps=5;
-    this.formControl.stepIndex=1;
+    this.formControl.stepIndex=0;
     this.formControl.stepLabel=`Next Step`;
 
     this.steps=[
-      {label: 'Registration'},
-      {label: 'About You'},
-      {label: 'Specialities'},
-      {label: 'Social'},
-      {label: 'Finish'}
+      {label: 'Signup',command:()=>{this.updateButtonStatus()}},
+      {label: 'About You',command:()=>{this.updateButtonStatus()}},
+      {label: 'Specialities',command:()=>{this.updateButtonStatus()}},
+      {label: 'Social',command:()=>{this.updateButtonStatus()}},
+      {label: 'Finish',command:()=>{this.updateButtonStatus()}}
     ];
     console.log(this.formControl.stepIndex)
   }
 
   onNextStep(){
-    if(this.formControl.stepIndex < this.formControl.totalSteps){
-      if(this.formControl.stepIndex == this.formControl.totalSteps -1){
+    if(this.formControl.stepIndex < this.formControl.totalSteps - 1){
+      if(this.formControl.stepIndex == this.formControl.totalSteps -2){
         this.formControl.stepLabel=`Signup`;
       }
       this.formControl.stepIndex+=1;
@@ -46,4 +46,7 @@ export class TrainerSignupComponent implements OnInit {
     }
   }
 
+  private updateButtonStatus(){
+    console.log(this.formControl.stepIndex,this.formControl.stepLabel)
+  }
 }
