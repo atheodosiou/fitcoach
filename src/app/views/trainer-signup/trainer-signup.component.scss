@@ -127,6 +127,17 @@
 
                 .step-3{
                     @include displayColumn();
+
+                    .slider{
+                        @include displayColumn();
+                        color: white;
+                        .slider-label{
+                            margin-bottom: .5em;
+                            border-radius: 3px;
+                        }
+
+
+                    }
                 }
 
                 .step-4{
@@ -161,4 +172,8 @@ p-steps ::ng-deep div > ul > li.ui-steps-item.ui-state-highlight.ui-steps-curren
 
 p-steps ::ng-deep > div > ul > li.ui-steps-item.ui-state-highlight.ui-steps-current > a > span.ui-steps-title{
     color: white;
+}
+
+p-slider ::ng-deep > div > span.ui-slider-range.ui-slider-range-min.ui-widget-header.ui-corner-all.ng-star-inserted{
+    background-color: blueviolet;
 }
