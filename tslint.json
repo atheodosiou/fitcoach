@@ -29,7 +29,7 @@
     "max-classes-per-file": false,
     "max-line-length": [
       true,
-      140
+      150
     ],
     "member-access": false,
     "member-ordering": [
@@ -72,7 +72,7 @@
       true,
       "single"
     ],
-    "trailing-comma": false,
+    "trailing-comma": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
