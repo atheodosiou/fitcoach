@@ -128,15 +128,8 @@
                 .step-3{
                     @include displayColumn();
 
-                    .slider{
-                        @include displayColumn();
-                        color: white;
-                        .slider-label{
-                            margin-bottom: .5em;
-                            border-radius: 3px;
-                        }
-
-
+                    .map{
+                        border-radius: 4px;
                     }
                 }
 
@@ -177,3 +170,7 @@ p-steps ::ng-deep > div > ul > li.ui-steps-item.ui-state-highlight.ui-steps-curr
 p-slider ::ng-deep > div > span.ui-slider-range.ui-slider-range-min.ui-widget-header.ui-corner-all.ng-star-inserted{
     background-color: blueviolet;
 }
+
+agm-map {
+    height: 310px;
+  }

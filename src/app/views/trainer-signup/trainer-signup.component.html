@@ -60,22 +60,14 @@
           </div>
           <!-- Step 3 -->
           <div *ngIf="formControl.stepIndex == 2" class="step-3">
-            <!-- <div class="form-field"> -->
-              <p-multiSelect [panelStyle]="{'width':'100%'}" [style]="{'width':'100%','margin-bottom':'1em'}"
-                defaultLabel="Select specialities" appendTo="body"></p-multiSelect>
-            <!-- </div>
-            <div class="form-field"> -->
-              <p-multiSelect [panelStyle]="{'width':'100%'}" [style]="{'width':'100%','margin-bottom':'1em'}"
-                defaultLabel="Select services location" appendTo="body"></p-multiSelect>
-            <!-- </div> -->
-            <input class="form-field" type="text" pInputText placeholder="Enter your city" style="margin-bottom: 1em;">
-            <div class="slider">
-              <div class="slider-label">Distance: {{distance}} Km</div>
-              <p-slider [(ngModel)]="distance" [min]="1" [max]="30" [style]="{'width':'100%'}"></p-slider>
-            </div>
-            <p-gmap [options]="mapOptions"
-              [style]="{'width':'100%','height':'190px','border-radius':'4px','margin-top':'1em'}"></p-gmap>
-
+            <ng-autocomplete [addressType]="type" [country]="countryRestrictions" 
+            (onAddressChange)="onAddressChange($event)" 
+            [style]="autocompleteStyle" placeholder="Where do you live"></ng-autocomplete>
+           <div class="map">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+           </div>
           </div>
           <!-- Step 4 -->
           <div *ngIf="formControl.stepIndex == 3" class="step-4">

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { SelectItem, MenuItem } from 'primeng/api';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+declare var google; 
 export class FormControl {
   stepLabel: string;
   stepIndex: number;
@@ -13,12 +14,23 @@ export class FormControl {
   styleUrls: ['./trainer-signup.component.scss']
 })
 export class TrainerSignupComponent implements OnInit {
-
+  google;
   gender: SelectItem[];
   steps: MenuItem[];
-  mapOptions: any;
-  distance:number=1;
   formControl: FormControl;
+  type:'address';  //This value could be address | geocode | establishment
+  countryRestrictions=['gr']; //If not set, default is ['us']
+  autocompleteStyle = {
+    'width':'100%',
+    'font-size':'1.2em',
+    'padding':'.5em .5em',
+    'border-radius':'4px',
+    'margin-bottom':'1em'
+  };
+  lat: number = 40.6400629;
+  lng: number = 22.9444191;
+  zoom:number = 12;
+
   constructor() { }
 
   ngOnInit() {
@@ -26,14 +38,10 @@ export class TrainerSignupComponent implements OnInit {
     this.formControl.totalSteps = 5;
     this.formControl.stepIndex = 0;
     this.formControl.stepLabel = 'Next Step';
-    this.mapOptions = {
-      center: { lat: 36.890257, lng: 30.707417 },
-      zoom: 12
-    };
     this.steps = [
       { label: 'Signup', command: () => { this.updateButtonStatus() } },
       { label: 'About You', command: () => { this.updateButtonStatus() } },
-      { label: 'Specialities', command: () => { this.updateButtonStatus() } },
+      { label: 'Location', command: () => { this.updateButtonStatus() } },
       { label: 'Social', command: () => { this.updateButtonStatus() } },
       { label: 'Finish', command: () => { this.updateButtonStatus() } }
     ];
@@ -56,5 +64,12 @@ export class TrainerSignupComponent implements OnInit {
     } else {
       this.formControl.stepLabel = 'Next Step'
     }
+  }
+
+  onAddressChange(event:any){
+    console.log(event)
+    this.lat=event.location.lat;
+    this.lng=event.location.lng;
+    this.zoom = 15;
   }
 }
